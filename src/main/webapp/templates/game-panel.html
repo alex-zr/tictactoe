@@ -1,0 +1,51 @@
+<div class="container">
+
+    <div class="row" ng-if="errorMessage != null">
+        <div class="alert alert-success">{{successMessage}}</div>
+    </div>
+
+
+    <div class="row">
+
+        <div class="col-md-6">
+
+            <form name="createNewBoard" class="form-horizontal" novalidate ng-submit="createNewGame()">
+
+                <div class="form-group">
+                    <div class="col-sm-offset-4 col-sm-6" style="padding-bottom:50px">
+                        <button type="submit" class="btn btn-md btn-primary" ng-disabled="createNewGame.$invalid">
+                            <span class="glyphicon glyphicon-plus"></span> New Game
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="col-md-6" ng-controller="gamesController">
+
+            <table class="table table-hover table-striped table-condensed" ng-show="playerGames.length">
+                <h2 class="lead">Games</h2>
+                <thead>
+                <td>Game name</td>
+                <td>Game status</td>
+                <td>Created</td>
+                <td></td>
+                </thead>
+                <tbody>
+                <tr ng-repeat="game in playerGames">
+                    <td>{{game.name}}</td>
+                    <td>{{game.gameStatus}}</td>
+                    <td>{{game.created | date:'MM-dd-yyyy HH:mm:ss'}}</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <div ng-show="!playerGames.length">
+                No games.
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

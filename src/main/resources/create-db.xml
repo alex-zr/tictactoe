@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+<!--    <changeSet author="al1 (generated)" id="1529242313618-1">
+        <createSequence sequenceName="HIBERNATE_SEQUENCE"/>
+    </changeSet>
+    <changeSet author="al1 (generated)" id="1529242313618-2">
+        <createTable tableName="GAME">
+            <column name="ID" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="CREATED" type="TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+            <column name="GAME_STATUS" type="VARCHAR(255)"/>
+            <column name="NAME" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="al1 (generated)" id="1529242313618-3">
+        <createTable tableName="MOVE">
+            <column name="ID" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="BOARD_COLUMN" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="BOARD_ROW" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="CREATED" type="TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+            <column name="PIECE_CODE" type="VARCHAR(255)"/>
+            <column name="GAME_ID" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="al1 (generated)" id="1529242313618-4">
+        <createTable tableName="PLAYER">
+            <column name="ID" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="EMAIL" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="PASSWORD" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="USER_NAME" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="al1 (generated)" id="1529242313618-5">
+        <addPrimaryKey columnNames="ID" constraintName="SYS_PK_10092" tableName="PLAYER"/>
+    </changeSet>
+    <changeSet author="al1 (generated)" id="1529242313618-6">
+        <addPrimaryKey columnNames="ID" constraintName="SYS_PK_10104" tableName="GAME"/>
+    </changeSet>
+    <changeSet author="al1 (generated)" id="1529242313618-7">
+        <addPrimaryKey columnNames="ID" constraintName="SYS_PK_10110" tableName="MOVE"/>
+    </changeSet>
+    <changeSet author="al1 (generated)" id="1529242313618-8">
+        <addUniqueConstraint columnNames="USER_NAME" constraintName="UK_EVHD0PQ12HFCJVRE179P23FS0" tableName="PLAYER"/>
+    </changeSet>
+    <changeSet author="al1 (generated)" id="1529242313618-9">
+        <addUniqueConstraint columnNames="EMAIL" constraintName="UK_OIVBIMCON0IQMB8EFPV723H08" tableName="PLAYER"/>
+    </changeSet>
+    <changeSet author="al1 (generated)" id="1529242313618-10">
+        <createIndex indexName="SYS_IDX_FK6KHBBQE4C9JMYWGVI9NEHPKD1_10121" tableName="MOVE">
+            <column name="GAME_ID"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="al1 (generated)" id="1529242313618-11">
+        <addForeignKeyConstraint baseColumnNames="GAME_ID" baseTableName="MOVE" constraintName="FK6KHBBQE4C9JMYWGVI9NEHPKD1" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="ID" referencedTableName="GAME"/>
+    </changeSet>-->
+
+</databaseChangeLog>
