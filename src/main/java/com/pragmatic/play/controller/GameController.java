@@ -27,8 +27,8 @@ public class GameController {
         this.httpSession = httpSession;
     }
 
-    @GetMapping(value = "/create", produces = APPLICATION_JSON_VALUE)
-    public Game createNewGame(@RequestParam String name) {
+    @GetMapping(value = "/create/{name}", produces = APPLICATION_JSON_VALUE)
+    public Game createNewGame(@PathVariable String name) {
 
         GameDTO gameDTO = new GameDTO(1, name, Piece.X);
         Game game = gameService.createNewGame(gameDTO);

@@ -17,8 +17,7 @@ app.controller('newGameController', ['$rootScope', '$scope', '$http', '$location
 
             var name = window.prompt("Enter game name", "game");
 
-            http.get("/game/create", {
-                params: {name: name},
+            http.get("/game/create/" + name, {
                 headers: {
                     'Content-Type': 'application/json; charset=UTF-8'
                 }
