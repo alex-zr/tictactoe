@@ -21,13 +21,12 @@ app.controller('newGameController', ['$rootScope', '$scope', '$http', '$location
                 headers: {
                     'Content-Type': 'application/json; charset=UTF-8'
                 }
-            }).success(function (data, status, headers, config) {
+            }).success(function (data) {
                 rootScope.gameId = data.id;
                 location.path('/game/' + rootScope.gameId);
-            }).error(function (data, status, headers, config) {
+            }).error(function () {
                 location.path('/player/panel');
             });
         }
-
     }
 ]);

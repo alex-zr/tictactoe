@@ -27,7 +27,7 @@ public class GameController {
         this.httpSession = httpSession;
     }
 
-    @GetMapping(value = "/create/{name}", produces = APPLICATION_JSON_VALUE)
+    @GetMapping(value = "/create/{name}")
     public Game createNewGame(@PathVariable String name) {
 
         GameDTO gameDTO = new GameDTO(1, name, Piece.X);
@@ -39,7 +39,7 @@ public class GameController {
         return game;
     }
 
-    @GetMapping(value = "/player/list", produces = APPLICATION_JSON_VALUE)
+    @GetMapping(value = "/player/list")
     public List<Game> getPlayerGames() {
         return gameService.getGames();
     }

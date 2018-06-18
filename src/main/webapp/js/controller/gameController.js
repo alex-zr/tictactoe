@@ -10,7 +10,7 @@ app.controller('gameController', ['$rootScope', '$routeParams', '$scope', '$http
                 scope.gameProperties = data;
                 gameStatus = scope.gameProperties.gameStatus;
                 getMoveHistoryAndRefresh();
-            }).error(function (data, status, headers, config) {
+            }).error(function () {
                 scope.errorMessage = "Failed do load game properties";
             });
         }
@@ -22,11 +22,10 @@ app.controller('gameController', ['$rootScope', '$routeParams', '$scope', '$http
                 scope.movesInGame = data;
                 scope.playerMoves = [];
 
-                //paint the board with positions from the retrieved moves
                 angular.forEach(scope.movesInGame, function (move) {
                     scope.rows[move.boardRow - 1][move.boardColumn - 1].letter = move.pieceCode;
                 });
-            }).error(function (data, status, headers, config) {
+            }).error(function () {
                 scope.errorMessage = "Failed to load moves in game"
             });
         }
@@ -35,7 +34,7 @@ app.controller('gameController', ['$rootScope', '$routeParams', '$scope', '$http
 
             for (var i = 0; i < scope.movesInGame.length; i++) {
                 var move = scope.movesInGame[i];
-                if (move.boardColumn == boardColumn && move.boardRow == boardRow) {
+                if (move.boardColumn === boardColumn && move.boardRow === boardRow) {
                     return false;
                 }
             }

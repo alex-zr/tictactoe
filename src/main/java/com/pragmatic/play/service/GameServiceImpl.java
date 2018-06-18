@@ -19,6 +19,7 @@ import static java.util.Arrays.asList;
 @Transactional
 public class GameServiceImpl implements GameService {
 
+    private static final int FIELD_SIZE = 9;
     private final GameRepository gameRepository;
 
     @Autowired
@@ -73,7 +74,7 @@ public class GameServiceImpl implements GameService {
 
     @Override
     public boolean isBoardFull(List<Position> takenPositions) {
-        return takenPositions.size() == 9;
+        return takenPositions.size() == FIELD_SIZE;
     }
 
     @Override

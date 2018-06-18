@@ -19,9 +19,9 @@ import java.util.List;
 @RequestMapping("/move")
 public class MoveController {
 
-    private MoveService moveService;
-    private GameService gameService;
-    private HttpSession httpSession;
+    private final MoveService moveService;
+    private final GameService gameService;
+    private final HttpSession httpSession;
 
     @Autowired
     public MoveController(MoveService moveService, GameService gameService, HttpSession httpSession) {

@@ -1,11 +1,11 @@
 app.controller('gamesController', ['$scope', '$http', '$location', '$routeParams',
-    function (scope, http, location, routeParams) {
+    function (scope, http, location) {
 
         scope.playerGames = [];
 
         http.get('/game/player/list').success(function (data) {
             scope.playerGames = data;
-        }).error(function (data, status, headers, config) {
+        }).error(function () {
             location.path('/player/panel');
         });
 
