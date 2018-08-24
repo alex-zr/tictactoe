@@ -8,6 +8,7 @@ import com.pragmatic.play.persistence.domain.Position;
 import com.pragmatic.play.persistence.domain.dto.CreateMoveDTO;
 import com.pragmatic.play.persistence.domain.dto.MoveDTO;
 import com.pragmatic.play.persistence.repository.MoveRepository;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,16 +19,11 @@ import java.util.stream.Collectors;
 
 @Service
 @Transactional
+@AllArgsConstructor
 public class MoveServiceImpl implements MoveService {
 
     private final MoveRepository moveRepository;
     private final GameService gameService;
-
-    @Autowired
-    public MoveServiceImpl(MoveRepository moveRepository, GameService gameService) {
-        this.moveRepository = moveRepository;
-        this.gameService = gameService;
-    }
 
     @Override
     public Move createMove(Game game, Piece piece, CreateMoveDTO createMoveDTO) {

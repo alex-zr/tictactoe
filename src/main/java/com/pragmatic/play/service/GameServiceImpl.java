@@ -5,6 +5,7 @@ import com.pragmatic.play.persistence.domain.Game;
 import com.pragmatic.play.persistence.domain.Position;
 import com.pragmatic.play.persistence.domain.dto.GameDTO;
 import com.pragmatic.play.persistence.repository.GameRepository;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -17,15 +18,11 @@ import static java.util.Arrays.asList;
 
 @Service
 @Transactional
+@AllArgsConstructor
 public class GameServiceImpl implements GameService {
 
     private static final int FIELD_SIZE = 9;
     private final GameRepository gameRepository;
-
-    @Autowired
-    public GameServiceImpl(GameRepository gameRepository) {
-        this.gameRepository = gameRepository;
-    }
 
     @Override
     public Game createNewGame(GameDTO gameDTO) {

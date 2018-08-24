@@ -4,6 +4,7 @@ import com.pragmatic.play.enums.Piece;
 import com.pragmatic.play.persistence.domain.Game;
 import com.pragmatic.play.persistence.domain.dto.GameDTO;
 import com.pragmatic.play.service.GameService;
+import lombok.AllArgsConstructor;
 import lombok.extern.java.Log;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -16,16 +17,11 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 @Log
 @RestController
 @RequestMapping("/game")
+@AllArgsConstructor
 public class GameController {
 
     private final GameService gameService;
     private final HttpSession httpSession;
-
-    @Autowired
-    public GameController(GameService gameService, HttpSession httpSession) {
-        this.gameService = gameService;
-        this.httpSession = httpSession;
-    }
 
     @GetMapping(value = "/create/{name}")
     public Game createNewGame(@PathVariable String name) {

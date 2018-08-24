@@ -7,6 +7,7 @@ import com.pragmatic.play.persistence.domain.dto.CreateMoveDTO;
 import com.pragmatic.play.persistence.domain.dto.MoveDTO;
 import com.pragmatic.play.service.GameService;
 import com.pragmatic.play.service.MoveService;
+import lombok.AllArgsConstructor;
 import lombok.extern.java.Log;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -17,18 +18,12 @@ import java.util.List;
 @Log
 @RestController
 @RequestMapping("/move")
+@AllArgsConstructor
 public class MoveController {
 
     private final MoveService moveService;
     private final GameService gameService;
     private final HttpSession httpSession;
-
-    @Autowired
-    public MoveController(MoveService moveService, GameService gameService, HttpSession httpSession) {
-        this.moveService = moveService;
-        this.gameService = gameService;
-        this.httpSession = httpSession;
-    }
 
     @PostMapping(value = "/create")
     public Move createMove(@RequestBody CreateMoveDTO createMoveDTO) {
