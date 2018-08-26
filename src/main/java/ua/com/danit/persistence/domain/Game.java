@@ -1,5 +1,6 @@
 package ua.com.danit.persistence.domain;
 
+import lombok.Builder;
 import ua.com.danit.enums.GameStatus;
 import lombok.Data;
 
@@ -15,6 +16,7 @@ import java.util.Date;
 
 @Data
 @Entity
+@Builder
 public class Game {
 
     @Id
@@ -27,6 +29,6 @@ public class Game {
     @Enumerated(EnumType.STRING)
     GameStatus gameStatus;
 
-    @Column(name = "created", nullable = false)
+    @Column(name = "created", nullable = true)
     Date created;
 }

@@ -24,7 +24,7 @@ public class GameServiceImpl implements GameService {
 
     @Override
     public Game createNewGame(GameDTO gameDTO) {
-        Game game = new Game();
+        Game game = Game.builder().build();
 
         game.setName(gameDTO.getName());
         game.setGameStatus(GameStatus.IN_PROGRESS);

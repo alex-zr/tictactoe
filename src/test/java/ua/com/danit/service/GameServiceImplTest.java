@@ -1,11 +1,15 @@
 package ua.com.danit.service;
 
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.junit.MockitoJUnitRunner;
 import ua.com.danit.persistence.domain.Position;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
+import ua.com.danit.persistence.repository.GameRepository;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -14,12 +18,16 @@ import java.util.List;
 import static junit.framework.TestCase.assertTrue;
 import static org.junit.Assert.assertFalse;
 
-@RunWith(SpringRunner.class)
-@SpringBootTest
+//@RunWith(SpringRunner.class)
+//@SpringBootTest
+@RunWith(MockitoJUnitRunner.class)
 public class GameServiceImplTest {
 
-    @Autowired
-    private GameService gameService;
+    @Mock
+    private GameRepository gameRepository;
+
+    @InjectMocks
+    private GameServiceImpl gameService;
 
     @Test
     public void isWinnerVertical() {
